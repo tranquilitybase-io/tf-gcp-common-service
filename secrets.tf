@@ -19,7 +19,7 @@ resource "random_password" "password" {
 }
 
 resource "google_secret_manager_secret" "secret-basic" {
-  count = var.create_password ? var.num_password_create : 0
+  count = length(var.secret_name)
 
   project   = var.project_id
   secret_id = var.secret_name[count.index]
@@ -34,7 +34,7 @@ resource "google_secret_manager_secret" "secret-basic" {
 }
 
 resource "google_secret_manager_secret_version" "secret-version-basic" {
-  count = var.create_password ? var.num_password_create : 0
+  count = length(var.secret_name)
 
   secret      = element(google_secret_manager_secret.secret-basic.*.id, count.index)
   secret_data =  element(random_password.password.*.result, count.index)

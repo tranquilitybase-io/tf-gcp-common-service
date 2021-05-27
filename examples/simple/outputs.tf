@@ -13,5 +13,5 @@
 # limitations under the License.
 
 output "random_passwords" {
-  value = module.simple_secret_manager.random_passwords
+  value = module.simple_secret_manager.secret_data
 }

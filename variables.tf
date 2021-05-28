@@ -33,7 +33,7 @@ variable "password_length" {
 variable "secret_name" {
   type = list
   description = ""
-  default = ["foo", "bar", "fish"]
+  default = []
 }
 
 variable "replication_region" {
@@ -45,5 +45,5 @@ variable "replication_region" {
 variable "project_id" {
   description = ""
   type = string
-  default = "amce-testing-315021"
+  default = ""
 }

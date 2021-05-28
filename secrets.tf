@@ -13,7 +13,7 @@
 # limitations under the License.
 
 resource "random_password" "password" {
-  count  = var.create_password ? var.num_password_create : 0
+  count = length(var.secret_name)
 
   length = var.password_length
 }
@@ -37,5 +37,5 @@ resource "google_secret_manager_secret_version" "secret-version-basic" {
   count = length(var.secret_name)
 
   secret      = element(google_secret_manager_secret.secret-basic.*.id, count.index)
-  secret_data =  element(random_password.password.*.result, count.index)
+  secret_data = element(random_password.password.*.result, count.index)
 }

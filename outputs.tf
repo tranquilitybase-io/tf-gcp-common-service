@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-output "secret_data" {
-  value = zipmap(random_password.password.*.result, var.secret_name)
-  sensitive = true
-}
+//output "secret_data" {
+//  value = zipmap(random_password.password.*.result, var.secret_name)
+//  sensitive = true
+//}

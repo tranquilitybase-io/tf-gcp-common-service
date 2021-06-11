@@ -12,6 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-output "random_passwords" {
-  value = module.simple_secret_manager.secret_data
+output "secret_name" {
+  value = module.simple_secret_manager.secret_name
 }

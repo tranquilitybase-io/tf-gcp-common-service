@@ -12,16 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-variable "num_password_create" {
-  description = "Defines how many passwords to create"
-  type        = number
-  default     = 0
-}
-
 variable "create_password" {
   description = "Defines whether to create password"
   type        = bool
   default     = true
+}
+
+variable "num_password_create" {
+  description = "Defines how many passwords to create"
+  type        = number
+  default     = 0
 }
 
 variable "password_length" {
